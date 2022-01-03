@@ -8,6 +8,10 @@ Current Example Queries:
 
 `MATCH (n)-[r:DIRECTED]->(m) RETURN * LIMIT 45`
 
+`MATCH (n)-[r:PRODUCED]->(m) RETURN * LIMIT 45`
+
+`MATCH (n)-[r]->(m) RETURN * LIMIT 75`
+
 Uses NeoVis.js and React-NeoVis
 
 https://github.com/neo4j-contrib/neovis.js/
