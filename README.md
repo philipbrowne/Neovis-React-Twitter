@@ -26,4 +26,5 @@ Open browser to http://localhost:3000
 
 To view current Neo4j database locally, open browser to http://localhost:7474
 
+![Screenshot](/screenshot.png?raw=true "Screenshot")
 
