@@ -18,9 +18,6 @@ To Launch Local Deployment in Project Folder:
 
 `docker-compose up`
 
-Cypher Query can be modified in NeoGraph.js
-
 Open browser to http://localhost:3000
-  
 
 
