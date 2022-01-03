@@ -1,0 +1,49 @@
+version: '3.9'
+services:
+  neo4j:
+    build:
+      context: .
+      dockerfile: dockerfiles/neo4j.dockerfile
+    hostname: neo4j
+    container_name: neo4j
+    ports:
+      - '7474:7474'
+      - '7687:7687'
+    volumes:
+      - ./logs:/var/lib/neo4j/logs
+      - ./conf:/var/lib/neo4j/conf
+      - ./data:/var/lib/neo4j/data
+      - ./cyphers:/cyphers
+    environment:
+      - NEO4J_dbms_memory_pagecache_size=4G
+      - NEO4J_HOME=/var/lib/neo4j 
+      - NEO4J_AUTH=none
+  # seed:
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/seed.dockerfile
+  #   depends_on:
+  #     - neo4j
+  #     - frontend
+  #   links:
+  #     - "neo4j:db"
+  frontend:
+    build:
+      context: .
+      dockerfile: dockerfiles/frontend.dockerfile
+      # React App from https://github.com/jackdbd/react-neovis-example
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    environment:
+      - REACT_APP_NEO4J_URI=bolt://localhost:7687
+      - REACT_APP_NEO4J_USER=neo4j
+      - REACT_APP_NEO4J_PASSWORD=neo4j
+    links:
+      - "neo4j:db"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - neo4j
