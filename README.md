@@ -12,6 +12,8 @@ Current Example Queries:
 
 `MATCH (n)-[r]->(m) RETURN * LIMIT 75`
 
+`MATCH (n:Person)-[r]->(m:Movie) WHERE n.name = 'Keanu Reeves' RETURN *`
+
 Uses NeoVis.js and React-NeoVis
 
 https://github.com/neo4j-contrib/neovis.js/

@@ -142,6 +142,48 @@ const App = () => {
         }}
       initial_cypher="MATCH (n)-[r]->(m) RETURN * LIMIT 75"
       />
+      <h4>Keanu Reeves</h4>
+      <code>MATCH (n:Person)-[r]->(m:Movie) WHERE n.name = 'Keanu Reeves' RETURN *</code>
+      <ResponsiveNeoGraph
+        containerId={"id5"}
+        neo4jUri={NEO4J_URI}
+        neo4jUser={NEO4J_USER}
+        neo4jPassword={NEO4J_PASSWORD}
+        labels={{
+          "Person": {
+            "caption": "name",
+            "title_properties": [
+              "name",
+              "pagerank"
+            ]
+          },
+          "Movie": {
+            "caption": "title",
+            "title_properties": [
+              "title", "released", "tagline"
+            ]
+          }
+        }}
+      relationships={{
+          "PRODUCED": {
+            "thickness": "weight",
+            "caption": true
+        },
+        "HAS_CONTACT": {
+            "thickness": "weight",
+            "caption": true
+        },
+        "ACTED_IN": {
+            "thickness": "weight",
+            "caption": true
+        },
+        "DIRECTED": {
+            "thickness": "weight",
+            "caption": true
+        },
+        }}
+      initial_cypher="MATCH (n:Person)-[r]->(m:Movie) WHERE n.name = 'Keanu Reeves' RETURN *"
+      />
     </div>
   );
 };
