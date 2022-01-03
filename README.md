@@ -20,4 +20,6 @@ To Launch Local Deployment in Project Folder:
 
 Open browser to http://localhost:3000
 
+To view current Neo4j database locally, open browser to http://localhost:7474
+
 
