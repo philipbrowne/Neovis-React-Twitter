@@ -100,7 +100,7 @@ const App = () => {
       initial_cypher="MATCH (n)-[r:PRODUCED]->(m) RETURN *"
       />
       <h4>Everything Example</h4>
-      <code>MATCH (n)--(m) RETURN n</code>
+      <code>MATCH (n)-[r]->(m) RETURN * LIMIT 75</code>
       <ResponsiveNeoGraph
         containerId={"id3"}
         neo4jUri={NEO4J_URI}
