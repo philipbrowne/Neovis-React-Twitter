@@ -20,7 +20,7 @@ https://github.com/neo4j-contrib/neovis.js/
 
 https://github.com/jackdbd/react-neovis-example
 
-To Launch Local Deployment in Project Folder:
+To Launch Local Deployment in Project Folder (must have Docker installed - https://docs.docker.com/get-docker/):
 
 `docker-compose up`
 
