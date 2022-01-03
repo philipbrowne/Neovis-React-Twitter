@@ -67,6 +67,7 @@ const App = () => {
             "caption": true
           }
         }}
+        backgroundColor="#00000F"
       initial_cypher="MATCH (n)-[r:DIRECTED]->(m) RETURN * LIMIT 45"
       />
       <h4>Producer Example</h4>
