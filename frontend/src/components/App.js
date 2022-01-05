@@ -10,7 +10,7 @@ const App = () => {
     <div className="App" style={{ fontFamily: "Quicksand" }}>
       <h1>React Neovis</h1>
       <h4>Twitter Example</h4>
-      <code>MATCH (user:User)-[rel:POSTS]-(tweet:Tweet) RETURN user,rel,tweet LIMIT 5000</code>
+      <code>MATCH (user:User)-[rel:POSTS]-(tweet:Tweet) RETURN user,rel,tweet LIMIT 2000</code>
       <ResponsiveNeoGraph
         containerId={"id0"}
         neo4jUri={NEO4J_URI}
@@ -31,7 +31,7 @@ const App = () => {
             "caption": false
           }
         }}
-      initial_cypher="MATCH (user:User)-[rel:POSTS]-(tweet:Tweet) RETURN user,rel,tweet LIMIT 5000"
+      initial_cypher="MATCH (user:User)-[rel:POSTS]-(tweet:Tweet) RETURN user,rel,tweet LIMIT 2000"
       />
     </div>
   );
