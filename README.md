@@ -1,4 +1,4 @@
-# Neo4J/NeoVis with React and Movie Database Example
+# Neo4J/NeoVis with React and Russian Twitter Troll Data
 
 Uses Data released by NBC from their Investigation into Russian Twitter Trolls during the 2016 United States Election
 
