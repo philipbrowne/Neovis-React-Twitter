@@ -1,0 +1,3 @@
+LOAD CSV WITH HEADERS FROM "file:///tweets.csv" AS csvLine
+WITH csvLine
+CREATE (tweet:Tweet {tweetID: csvLine.tweet_id, username: csvLine.user_key, text: csvLine.text, userId: csvLine.user_id, createdAt: csvLine.created_at, createdStr: csvLine.created_str, retweenCount: csvLine.retweet_count, retweeted: csvLine.retweeted, favoriteCount: csvLine.favorite_count, source: csvLine.source, hashtags: csvLine.hashtags, expandedUrls: csvLine.expanded_urls, posted: csvLine.posted, mentions: csvLine.mentions, retweetedStatus: csvLine.retweeted_status})

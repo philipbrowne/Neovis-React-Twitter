@@ -1,24 +1,20 @@
 # Neo4J/NeoVis with React and Movie Database Example
 
-Uses Movies Graph DB with Neo4J
+Uses Data released by NBC from their Investigation into Russian Twitter Trolls during the 2016 United States Election
 
-Current Example Queries:
+Source: https://www.nbcnews.com/tech/social-media/now-available-more-200-000-deleted-russian-troll-tweets-n844731
 
-`MATCH (n)-[r:ACTED_IN]->(m) RETURN * LIMIT 45`
+Current Example Query:
 
-`MATCH (n)-[r:DIRECTED]->(m) RETURN * LIMIT 45`
+`MATCH (m)-[r]-(n) RETURN m,r,n LIMIT 10000`
 
-`MATCH (n)-[r:PRODUCED]->(m) RETURN * LIMIT 45`
-
-`MATCH (n)-[r]->(m) RETURN * LIMIT 75`
-
-`MATCH (n:Person)-[r]->(m:Movie) WHERE n.name = 'Keanu Reeves' RETURN *`
+Query can be Modified in /frontend/src/components/App.js
 
 Uses NeoVis.js and React-NeoVis
 
-https://github.com/neo4j-contrib/neovis.js/
+NeoVis: https://github.com/neo4j-contrib/neovis.js/
 
-https://github.com/jackdbd/react-neovis-example
+React-NeoVis: https://github.com/jackdbd/react-neovis-example
 
 To Launch Local Deployment in Project Folder (must have Docker installed - https://docs.docker.com/get-docker/):
 
@@ -26,7 +22,4 @@ To Launch Local Deployment in Project Folder (must have Docker installed - https
 
 Open browser to http://localhost:3000
 
-To view current Neo4j database locally, open browser to http://localhost:7474
-
-![Screenshot](/screenshot.png?raw=true "Screenshot")
-
+To view current Neo4j database locally, open browser to http://localhost:7474 and login with username: Neo4j, password: Neo4j

@@ -1,0 +1,3 @@
+LOAD CSV WITH HEADERS FROM "file:///users.csv" AS csvLine2
+WITH csvLine2
+CREATE (user:User {username: csvLine2.screen_name, name: csvLine2.name, id: csvLine2.id, location: csvLine2.location, followersCount: csvLine2.followers_count, statusesCount: csvLine2.statuses_count, timeZone: csvLine2.time_zone, verified: csvLine2.verified, description: csvLine2.description, createdAt: csvLine2.created_at, favoritesCount: csvLine2.favourites_count, friendsCount: csvLine2.friends_count, listedCount: csvLine2.listed_count})

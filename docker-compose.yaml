@@ -15,23 +15,13 @@ services:
       - ./data:/var/lib/neo4j/data
       - ./cyphers:/cyphers
     environment:
-      - NEO4J_dbms_memory_pagecache_size=4G
+      - NEO4J_dbms_memory_pagecache_size=5G
       - NEO4J_HOME=/var/lib/neo4j 
       - NEO4J_AUTH=none
-  # seed:
-  #   build:
-  #     context: .
-  #     dockerfile: dockerfiles/seed.dockerfile
-  #   depends_on:
-  #     - neo4j
-  #     - frontend
-  #   links:
-  #     - "neo4j:db"
   frontend:
     build:
       context: .
       dockerfile: dockerfiles/frontend.dockerfile
-      # React App from https://github.com/jackdbd/react-neovis-example
     ports:
       - '3000:3000'
     volumes:
