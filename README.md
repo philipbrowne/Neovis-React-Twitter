@@ -6,7 +6,7 @@ Source: https://www.nbcnews.com/tech/social-media/now-available-more-200-000-del
 
 Current Example Query:
 
-`MATCH (m)-[r]-(n) RETURN m,r,n LIMIT 10000`
+`MATCH (m)-[r]-(n) RETURN m,r,n LIMIT 5000`
 
 Query can be Modified in /frontend/src/components/App.js
 
